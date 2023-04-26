@@ -3,6 +3,7 @@
 # dependencies
 /node_modules
 /voices
+/config
 /.pnp
 .pnp.js
 

@@ -14,9 +14,9 @@ bot.on(message('voice'), async (ctx) => {
         const mp3Path = await ogg.toMp3(oggPath, userId) // конвертировали в mp3
 
         const text = await openai.transcription(mp3Path)
-        const response = await openai.chat(text)
+        // const response = await openai.chat(text)
         // console.log(oggPath)
-        await ctx.reply(mp3Path)
+        await ctx.reply(text)
     } catch (e) {
         console.log('Error while voice massage', e.message)
     }

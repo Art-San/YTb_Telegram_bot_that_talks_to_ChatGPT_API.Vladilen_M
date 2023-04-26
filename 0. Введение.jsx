@@ -28,3 +28,6 @@
 // npm i config
 
 // npm i axios fluent-ffmpeg @ffmpeg-installer/ffmpeg
+
+// npm i openai
+// npm i openai

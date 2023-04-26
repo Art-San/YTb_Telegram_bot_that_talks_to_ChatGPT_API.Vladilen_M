@@ -9,7 +9,7 @@ const bot = new Telegraf(config.get('TELEGRAM_TOKEN'))
 
 bot.on(message('voice'), async (ctx) => {
     try {
-        await ctx.reply(code('Сообщение принялю Жду ответ от сервера...'))
+        await ctx.reply(code('Сообщение принято Жду ответ от сервера...'))
         const link = await ctx.telegram.getFileLink(ctx.message.voice.file_id)
         const userId = String(ctx.message.from.id)
         const oggPath = await ogg.create(link.href, userId)
@@ -21,15 +21,15 @@ bot.on(message('voice'), async (ctx) => {
         const messages = [{ role: openai.roles.USER, content: text }]
         const response = await openai.chat(messages)
 
-        await ctx.reply(text)
+        await ctx.reply(response.content)
     } catch (e) {
         console.log('Error while voice massage', e.message)
     }
 })
 
-bot.command('start', async (ctx) => {
-    await ctx.reply(JSON.stringify(ctx.message, null, 2))
-})
+// bot.command('start', async (ctx) => {
+//     await ctx.reply(JSON.stringify(ctx.message, null, 2))
+// })
 
 bot.launch()
 

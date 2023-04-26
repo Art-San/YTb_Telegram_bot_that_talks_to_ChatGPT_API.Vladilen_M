@@ -3,6 +3,12 @@ import config from 'config'
 import { createReadStream } from 'fs'
 
 class OpenAI {
+    roles = {
+        ASSISTANT: 'assistant',
+        USER: 'user',
+        SYSTEM: 'system'
+    }
+
     constructor(apiKey) {
         const configuration = new Configuration({
             apiKey
@@ -10,7 +16,17 @@ class OpenAI {
         this.openai = new OpenAIApi(configuration)
     }
 
-    chat() {}
+    async chat(messages) {
+        try {
+            const response = await this.openai.createChatCompletion({
+                model: 'gpt-3.5-turbo',
+                messages
+            })
+            return response.data.choices[0].message
+        } catch (e) {
+            console.log('Error while GPT chat', e.message)
+        }
+    }
 
     async transcription(filepath) {
         try {
@@ -26,16 +42,3 @@ class OpenAI {
 }
 
 export const openai = new OpenAI(config.get('OPENAI_KEY'))
-
-// import { Configuration, OpenAIApi } from 'openai'
-// class OpenAI {
-//     constructor() {
-//         const configuration = new Configuration({
-//             apiKey: process.env.OPENAI_API_KEY
-//         })
-//         const openai = new OpenAIApi(configuration) // заменили на THIS чтоб было доступen в рамках данного класа
-//     }
-//     chat() {}
-//     transcription() {}
-// }
-// export const openai = new OpenAI()

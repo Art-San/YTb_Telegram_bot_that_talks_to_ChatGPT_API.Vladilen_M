@@ -9,8 +9,9 @@ bot.on(message('voice'), async (ctx) => {
     try {
         const link = await ctx.telegram.getFileLink(ctx.message.voice.file_id)
         const userId = String(ctx.message.from.id)
-        console.log(link.href)
         const oggPath = await ogg.create(link.href, userId)
+        const mp3Path = await ogg.toMp3(oggPath)
+        console.log(oggPath)
         await ctx.reply(JSON.stringify(link, null, 2))
     } catch (e) {
         console.log('Error while voice massage', e.message)

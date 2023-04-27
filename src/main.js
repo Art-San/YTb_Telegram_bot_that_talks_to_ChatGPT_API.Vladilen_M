@@ -1,9 +1,11 @@
-import { Telegraf, session } from 'telegraf' // подключаем контекст "session"
+import { Telegraf, session } from 'telegraf'
 import { message } from 'telegraf/filters'
 import { code } from 'telegraf/format'
 import config from 'config'
 import { ogg } from './ogg.js'
 import { openai } from './openai.js'
+
+console.log(config.get('TEST_ENV'))
 
 const INITIAL_SESSION = {
     messages: []
@@ -11,7 +13,7 @@ const INITIAL_SESSION = {
 
 const bot = new Telegraf(config.get('TELEGRAM_TOKEN'))
 
-bot.use(session()) // подключаем контекст middleware-Код который внедряется в какой-то процесс "посередине"
+bot.use(session())
 
 bot.command('new', async (ctx) => {
     ctx.session = INITIAL_SESSION

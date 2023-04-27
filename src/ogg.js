@@ -4,9 +4,9 @@ import installer from '@ffmpeg-installer/ffmpeg'
 import { createWriteStream } from 'fs'
 import { dirname, resolve } from 'path'
 import { fileURLToPath } from 'url'
-import { removeFile } from './utils.js' // не забывай дописывать JS, особенно при авто импорте
+import { removeFile } from './utils.js'
 
-const __dirname = dirname(fileURLToPath(import.meta.url)) // местоположение текущей папки
+const __dirname = dirname(fileURLToPath(import.meta.url))
 
 class OggConverter {
     constructor() {
@@ -21,7 +21,7 @@ class OggConverter {
                     .inputOption('-t 30')
                     .output(outputPath)
                     .on('end', () => {
-                        removeFile(input) // удаляем oog фаил после конвертации в mp3
+                        removeFile(input)
                         resolve(outputPath)
                     })
                     .on('error', (err) => reject(err.message))

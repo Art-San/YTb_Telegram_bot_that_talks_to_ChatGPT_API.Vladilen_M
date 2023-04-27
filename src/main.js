@@ -7,6 +7,9 @@ import { openai } from './openai.js'
 
 console.log(config.get('TEST_ENV'))
 
+const arrId = [466220524, 5016904767, 721836748]
+// const arrId = [466220524, 5016904767, 721836748]
+
 const INITIAL_SESSION = {
     messages: []
 }

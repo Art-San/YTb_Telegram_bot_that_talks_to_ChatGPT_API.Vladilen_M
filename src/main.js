@@ -92,7 +92,7 @@ import { openai } from './openai.js'
 
 console.log(config.get('TEST_ENV'))
 
-const arrId = [466220524, 5016904767, 721836748]
+const arrId = [466220524, 5016904767, '721836748']
 
 const INITIAL_SESSION = {
     messages: []
@@ -120,7 +120,9 @@ bot.on(message('voice'), async (ctx) => {
         const userId = String(ctx.message.from.id)
 
         if (!arrId.includes(userId)) {
-            await ctx.reply('У вас нет доступа')
+            await ctx.reply(
+                `У вас нет доступа, так как вашего id: ${ctx.message.from.id} нет в нашей базе`
+            )
             return
         }
 
@@ -151,10 +153,25 @@ bot.on(message('text'), async (ctx) => {
         await ctx.reply(code('Сообщение принято Жду ответ от сервера...'))
 
         const userId = String(ctx.message.from.id)
+        console.log('userId', userId)
         if (!arrId.includes(userId)) {
-            await ctx.reply('У вас нет доступа')
+            await ctx.reply(
+                `У вас нет доступа, так как вашего id: ${ctx.message.from.id} нет в нашей базе`
+            )
             return
         }
+
+        // const userId = ctx.message.from.id
+        // const arrId = [123, 456, 789]
+
+        // const isAuthorized = arrId.find((id) => id === userId)
+
+        // if (!isAuthorized) {
+        //     await ctx.reply(
+        //         `У вас нет доступа, так как вашего id: ${userId} нет в нашей базе`
+        //     )
+        //     return
+        // }
 
         ctx.session.messages.push({
             role: openai.roles.USER,

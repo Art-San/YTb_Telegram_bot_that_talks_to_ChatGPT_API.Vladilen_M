@@ -66,7 +66,8 @@
 // config/production.json
 // .vscode
 
-// Dockerfile // создаем такой фаил
+// 1.создаем такой фаил
+// Dockerfile
 
 // FROM node:16-alpine
 
@@ -83,3 +84,79 @@
 // EXPOSE $PORT
 
 // CMD ["npm", "start"]
+
+// 2. в терменале
+// "docker build -t bottelgpt ." собираем образ из инструкции Dockerfile// bottelgpt -- Это имя
+
+// 3. чтобы упростить создаем в корне проэкта Makefile
+// build:
+//   docker build -t bottelgpt .
+
+// run:
+//   docker run -d -p 3000:3000 --name bottelgpt --rm bottelgpt
+
+// make run
+// make build
+// make run
+// make build
+// 3 пункт както не так сработал
+
+// 4. docker images
+
+// 5. docker stop bottelgpt
+
+// 6. docker run -d -p 3000:3000 --name bottel --rm bottelgpt // тут какието непонятки bottel --rm bottelgpt с именами
+// // .. все запустилось и работало
+
+// 7. docker stop bottel // "bottel" обрати внимание
+
+//===============================================
+
+
+// ssh root@45.00000000
+1. ls 
+
+2. git -v
+
+3. если нет гита 
+// apt install git
+
+4. копируем с гита
+// git clone https://github.com/Art-San/YTb_MERN-Blog
+
+5. Теперь смотрим и видем скопированный репозиторий 
+// ls --- snap  clone
+
+6. Переходим в нее
+// cd YTb_MERN-Blog_2022_
+
+7. Если посмотрим в ней 
+// ls --- '0. Введение.jsx'   Dockerfile     package-lock.json   voices ( 0.dop-- это лишнее)
+// config             package.json   src
+
+8. Переходим в config
+cd config // и там не хрена нет. ключи переносим руками
+
+9. Создаем production.json
+touch production.json
+
+10. заходим в нуторь
+nano production.json 
+// вставляем ключи
+
+11. выходим на вверх
+cd ..
+
+12. docker build -t bottelgpt .
+
+13. docker run -d -p 3000:3000 --name bottelgpt --rm bottelgpt
+
+14. docker images
+REPOSITORY   TAG       IMAGE ID       CREATED         SIZE
+bottelgpt    latest    326f73de704b   3 minutes ago   220MB
+
+15. docker run -d -p 3000:3000 --name bottelgpt --rm bottelgpt
+
+16. docker logs bottelgpt // смотрим запускается ли контейнер
+
+ls

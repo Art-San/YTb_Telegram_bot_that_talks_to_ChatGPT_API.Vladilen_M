@@ -159,3 +159,12 @@
 // 16. docker logs bottelgpt // смотрим запускается ли контейнер
 
 // ls
+
+
+// ПОЛУЧИЛОСЬ ПОЛУЧИТЬ ДАННЫЕ
+// npm i google-spreadsheet
+// https://www.youtube.com/watch?v=9tD0YmfGZ1s
+//https://github.com/RajKKapadia/Youtube-GoogleSheet-NodeJS
+
+// еще видео из формы в гугл табицу
+// https://www.youtube.com/watch?v=ZA6j2PhXSUg&t=205s

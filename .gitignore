@@ -3,6 +3,6 @@ node_modules
 config/default.json
 config/production.json
 .vscode
-/test
+test
 .vscode
 podskazchikveregudbot-01bb475a9ffb.json

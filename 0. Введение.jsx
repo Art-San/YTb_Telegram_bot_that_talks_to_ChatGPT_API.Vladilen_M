@@ -86,29 +86,28 @@
 // CMD ["npm", "start"]
 
 // 2. в терменале
+docker -v
 // "docker build -t bottelgpt ." собираем образ из инструкции Dockerfile// bottelgpt -- Это имя
 
-// 3. чтобы упростить создаем в корне проэкта Makefile
+// 2.1 чтобы упростить создаем в корне проэкта Makefile
 // build:
 //   docker build -t bottelgpt .
 
 // run:
 //   docker run -d -p 3000:3000 --name bottelgpt --rm bottelgpt
 
-// make run
-// make build
-// make run
-// make build
-// 3 пункт както не так сработал
+// 4. docker images // bottelgpt    latest    c9205665efab   31 minutes ago   573MB
 
-// 4. docker images
-
-// 5. docker stop bottelgpt
+// 0. docker stop bottelgpt // на предыдущем шаге увилел IMAGE стоп не понадобился
 
 // 6. docker run -d -p 3000:3000 --name bottel --rm bottelgpt // тут какието непонятки bottel --rm bottelgpt с именами
 // // .. все запустилось и работало
 
-// 7. docker stop bottel // "bottel" обрати внимание
+// 7. docker stop bottelgpt
+
+// docker logs bottelgpt
+
+
 
 //===============================================
 

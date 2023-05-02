@@ -25,6 +25,7 @@ class OpenAI {
             return response.data.choices[0].message
         } catch (e) {
             console.log('Error while GPT chat', e.message)
+            return e.message
         }
     }
 
@@ -37,6 +38,7 @@ class OpenAI {
             return response.data.text
         } catch (e) {
             console.log('Error while transcription', e.message)
+            
         }
     }
 }

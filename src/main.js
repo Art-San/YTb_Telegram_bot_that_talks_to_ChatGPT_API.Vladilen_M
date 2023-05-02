@@ -116,7 +116,8 @@ bot.on(message('voice'), async (ctx) => {
 
         await ctx.reply(response.content)
     } catch (e) {
-        console.log('Error while voice massage', e.message)
+        console.log('Ошибка во время голосового сообщения', e.message)
+        await ctx.reply(`Ошибка во время голосового сообщения ${e.message}`)
     }
 })
 
@@ -147,7 +148,8 @@ bot.on(message('text'), async (ctx) => {
 
         await ctx.reply(response.content)
     } catch (e) {
-        console.log('Error while text massage', e.message)
+        console.log('Ошибка при отправке текстового сообщения', e.message)
+        await ctx.reply(`Ошибка при отправке текстового сообщения ${e.message}`)
     }
 })
 

@@ -95,6 +95,7 @@ docker -v
 
 // run:
 //   docker run -d -p 3000:3000 --name bottelgpt --rm bottelgpt
+//   docker run -d -p 3000:3000 --name bottelgpt_1 --rm bottelgpt_1
 
 // 4. docker images // bottelgpt    latest    c9205665efab   31 minutes ago   573MB
 
@@ -104,8 +105,9 @@ docker -v
 // // .. все запустилось и работало
 
 // 7. docker stop bottelgpt
+// 7. docker stop bottelgpt_1
 
-// docker logs bottelgpt
+// docker logs bottelgpt_1
 
 
 

@@ -123,7 +123,7 @@ docker -v
 // apt install git
 
 // 4. копируем с гита
-// git clone https://github.com/Art-San/YTb_MERN-Blog
+// git clone https://github.com/Art-San/YTb_Telegram_bot_that_talks_to_ChatGPT_API.Vladilen_M.git
 
 // 5. Теперь смотрим и видем скопированный репозиторий
 // ls --- snap  clone
@@ -144,9 +144,15 @@ docker -v
 
 ЗАШЕЛ НА ХОСТИНГ vps НАШЕЛ ПАПКУ root И ТАМ "КЛОН"
 
-// 10. заходим в нуторь
+// 10. 
+//. РЕДАКТИРОВАТЬ
+// ---- nano ----
 // nano production.json
-// вставляем ключи
+// ctrl + SHIFT + V // вставить 
+// CTRL + O // СОХРОНИТЬ ВСТАВЛЕНОЕ
+// заием нажать ENTER
+// CTRL + X // выход из нано
+// Заходим еще раз nano production.json СМОТРИМ все ЛИ на месте
 
 alt+shift+v  вставить 
 ====================================================

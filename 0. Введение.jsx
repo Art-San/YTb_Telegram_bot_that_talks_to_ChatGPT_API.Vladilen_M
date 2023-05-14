@@ -169,6 +169,9 @@ alt+shift+v  вставить
 // REPOSITORY   TAG       IMAGE ID       CREATED         SIZE
 // bottelgpt    latest    326f73de704b   3 minutes ago   220MB
 
+REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
+bottelgpt    latest    eda07be01273   10 days ago   364MB
+
 // 15. docker run -d -p 3000:3000 --name bottelgpt --rm bottelgpt
 
 // 16. docker logs bottelgpt // смотрим запускается ли контейнер

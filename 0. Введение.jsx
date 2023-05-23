@@ -107,7 +107,7 @@ docker -v
 // 7. docker stop bottelgpt
 // 7. docker stop bottelgpt_1
 
-// docker logs bottelgpt_1
+// docker logs bottelgpt
 
 
 

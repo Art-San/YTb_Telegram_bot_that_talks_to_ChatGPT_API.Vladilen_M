@@ -38,6 +38,34 @@ export async function initCommandUp1(ctx) {
   }
 }
 
+export async function initCommandUp2(ctx) {
+  try {
+    const userId = String(ctx.message.from.id)
+    const nameUser = ctx.message.from.first_name
+    if (arrIdUsers.includes(userId)) {
+      await ctx.reply(`${nameUser} ваш id: ${userId} уже есть в нашей базе`)
+      await ctx.reply(`Массив пользователей: ${arrIdUsers}`)
+      return
+    }
+    console.log(arrIdUsers)
+
+    await ctx.reply(`${nameUser} вашего id: ${userId} нет в базе `)
+  } catch (e) {
+    console.error(e)
+    await ctx.reply('Ошибка при обновлении данных')
+  }
+}
+
+export async function initCommandGetId(ctx) {
+  try {
+    arrIdUsers = await googleAPI.getArrId()
+    await ctx.reply(`Массив пользователей: ${arrIdUsers}`)
+    console.log(arrIdUsers)
+  } catch (e) {
+    console.log('Error while getting rows', e.message)
+  }
+}
+
 export async function processTextToChat(ctx, content) {
   try {
     ctx.session.messages.push({ role: openai.roles.USER, content })
